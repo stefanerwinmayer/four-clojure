@@ -1,3 +1,3 @@
 # Introduction to four-clojure
 
-TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)
+Solutions to Katas on http://www.4clojure.com
