@@ -17,10 +17,6 @@
           [a b]))
   )
 
-(__ #{1 2 3} #{4 5})
-
-(test-code)
-
 (defn test-code
   []
   (doseq [[test-case test-number] (map vector test-cases (range))]
