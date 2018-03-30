@@ -8,19 +8,17 @@
     (== (__ 7 5/7 2 3/5) 210)])
 
 (def __
-  #(if (zero? %2)
-     %1
-     (recur %2 (mod %1 %2)))
+  (fn [& xs]
+    (letfn [(gcd [a b]
+              (if (zero? b)
+                a
+                (recur b (mod a b))))
+            (lcm [a b]
+              (/ (* a b)
+                 (gcd a b)))]
+      (reduce lcm xs)))
   )
-  )
 
-#(apply min (clojure.set/intersection
-              (set (take 100 (iterate (partial + 2) 2)))
-              (set (take 100 (iterate (partial + 3) 3)))))
-
-
-
-(test-code)
 (defn test-code
   []
   (doseq [[test-case test-number] (map vector test-cases (range))]
